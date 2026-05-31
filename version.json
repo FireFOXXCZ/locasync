@@ -1,13 +1,26 @@
 {
-  "version": "1.0.9",
+  "version": "1.1.0",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.0.9/locasync-1.0.9.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.0/locasync-1.1.0.zip",
   "changelog": [
-    "[FIX] Inteligentní normalizace plochých lokalizačních klíčů. Pokud herní .locres soubory obsahují čisté MD5/Hex hashe bez jmenného prostoru, editor automaticky odmaže nevzhledná úvodní lomítka a dvojtečky pro dokonale čistý data grid. Původní systémový tvar pro C# kompilátor zůstává bezpečně zachován v pozadí.",
-    "[FIX] Zajištění striktního jednořádkového formátu při exportu do CSV. Pomocné editační značky zalomení <cf> a <lf> jsou při běžném exportu ponechány jako textové tagy. To garantuje, že se rozsáhlé textové bloky (např. PDA deníky) nerozpadnou na více řádků a externí překladače či AI je zpracují bez poškození struktury.",
-    "[SYS] Odstraněn zapomenutý import ikony FileText z hlavičky souboru a kompletně vyčištěny strict chyby linteru, které dříve nekompromisně blokovaly produkční build celé aplikace."
+    "[NEW] Zcela přepracován design horních karet v Živém Editoru, aby se vizuálně odlišil od venkovního dashboardu a nabídl specifické metriky pro překladatele (Originální segmenty, Předběžné překlady, Uzamčené korektury).",
+    "[NEW] Zaveden pokročilý interaktivní log „Historie Překladatelů“. Editor nyní na jedno kliknutí zobrazí detailní statistiku o všech členech týmu, kteří do vybraného projektu jakkoli zasáhli – včetně informací o celkovém počtu úprav a čase úplně poslední aktivity daného uživatele.",
+    "[NEW] Projektoví manažeři a administrátoři nyní mohou označit cloudový projekt jako zcela Dokončený. Projekt získá prémiový jantarový design, exkluzivní pečeť a jasně se vyčlení od probíhajících překladů.",
+    "[SEC] Aplikován hard-lock pro dokončené projekty (Read-Only Mód). Jakmile vedení projekt uzavře, celá struktura v Živém Editoru se napříč celým týmem nezvratně uzamkne proti dalším úpravám, nahrazování či ukládání změn.",
+    "[UX] Na hlavní nástěnku (Dashboard) přidána chytrá vyhledávací a filtrovací lišta. Projekty nyní můžete okamžitě filtrovat podle názvu, stavu kompletace nebo si zobrazit pouze vaši vlastní agendu.",
+    "[UX] Optimalizace Modálních oken: Z důvodu čistšího designu a sjednocení vizuální identity byly ze systémových pop-up oken odstraněny přebytečné horní křížky. Zpřehlednila se také integrace vestavěného Changelogu pro budoucí updaty."
   ],
   "history": [
+    {
+      "version": "1.0.9",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.0.9/locasync-1.0.9.zip",
+      "changelog": [
+        "[FIX] Inteligentní normalizace plochých lokalizačních klíčů. Pokud herní .locres soubory obsahují čisté MD5/Hex hashe bez jmenného prostoru, editor automaticky odmaže nevzhledná úvodní lomítka a dvojtečky pro dokonale čistý data grid. Původní systémový tvar pro C# kompilátor zůstává bezpečně zachován v pozadí.",
+        "[FIX] Zajištění striktního jednořádkového formátu při exportu do CSV. Pomocné editační značky zalomení <cf> a <lf> jsou při běžném exportu ponechány jako textové tagy. To garantuje, že se rozsáhlé textové bloky (např. PDA deníky) nerozpadnou na více řádků a externí překladače či AI je zpracují bez poškození struktury.",
+        "[SYS] Odstraněn zapomenutý import ikony FileText z hlavičky souboru a kompletně vyčištěny strict chyby linteru, které dříve nekompromisně blokovaly produkční build celé aplikace."
+      ]
+    },
     {
       "version": "1.0.8",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
