@@ -1,0 +1,90 @@
+{
+  "version": "1.0.9",
+  "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.0.9/locasync-1.0.9.zip",
+  "changelog": [
+    "[FIX] Inteligentní normalizace plochých lokalizačních klíčů. Pokud herní .locres soubory obsahují čisté MD5/Hex hashe bez jmenného prostoru, editor automaticky odmaže nevzhledná úvodní lomítka a dvojtečky pro dokonale čistý data grid. Původní systémový tvar pro C# kompilátor zůstává bezpečně zachován v pozadí.",
+    "[FIX] Zajištění striktního jednořádkového formátu při exportu do CSV. Pomocné editační značky zalomení <cf> a <lf> jsou při běžném exportu ponechány jako textové tagy. To garantuje, že se rozsáhlé textové bloky (např. PDA deníky) nerozpadnou na více řádků a externí překladače či AI je zpracují bez poškození struktury.",
+    "[SYS] Odstraněn zapomenutý import ikony FileText z hlavičky souboru a kompletně vyčištěny strict chyby linteru, které dříve nekompromisně blokovaly produkční build celé aplikace."
+  ],
+  "history": [
+    {
+      "version": "1.0.8",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.0.8/locasync-1.0.8.zip",
+      "changelog": [
+        "[FIX] Kritická oprava chování Locres Packeru při kompilaci do .locres souborů. Třetí sloupec se již nevynechává a je vždy korektně vygenerován, aby nedocházelo k chybám IndexOutOfRange v C# kompilátoru.",
+        "[FIX] Zcela přepsán algoritmus importu a exportu tabulek (PapaParse integrace). Nyní systém perfektně a bezpečně zpracovává texty, které uvnitř obsahují reálné čárky, aniž by došlo k nechtěnému rozpadu sloupců či zničení struktury.",
+        "[UX] Export z Packeru do běžného .csv souboru je nyní pročištěn a striktně dvousloupcový (Klíč + Zdroj). Editor již na konec řádků negeneruje prázdné oddělovače (visící čárky)."
+      ]
+    },
+    {
+      "version": "1.0.7",
+      "changelog": [
+        "[FIX] Plně obnovena funkčnost globálních Toast notifikací, které informují o úspěšném uložení, chybách či zkopírování textu do schránky.",
+        "[UX] Vylepšené chování stránkování v tabulce. Při přechodu na další nebo předchozí stránku vás nyní editor automaticky a plynule odscrolluje zpět nahoru k prvnímu záznamu.",
+        "[UX] Mírně upraveno chování vyhledávacího panelu (Find & Replace) a vyřešeny Linter varování spojená se spouštěním smyčky dvojitého vykreslování."
+      ]
+    },
+    {
+      "version": "1.0.6",
+      "changelog": [
+        "[NEW] Integrován inteligentní panel Hledat & Nahradit (Find & Replace) pro rychlou úpravu textů. Podporuje hromadné nahrazení všech vyfiltrovaných výsledků najednou oder postupné nahrazování.",
+        "[NEW] Přidána šipková navigace ve vyhledávání. Můžete plynule přeskakovat mezi nalezenými výsledky, přičemž vás editor automaticky odscrolluje na správné místo (a v případě potřeby i přepne stránku).",
+        "[UX] Zavedena rychlá klávesová zkratka: Při psaní do pole pro nahrazení stačí stisknout klávesu Enter. Výraz se okamžitě nahradí a editor vás rovnou přesune na další nalezený výskyt.",
+        "[UX] Aktivní výsledek vyhledávání je nyní v tabulce výrazně vizuálně odlišen fialovým orámováním celého řádku a podsvícením jeho čísla pro dokonalou orientaci v textu.",
+        "[FIX] Rozsáhlá optimalizace výkonu a čištění kódu (Strict Linter Fixes). Odstraněno zbytečné dvojité renderování (cascading renders) při změně vyhledávacích filtrů a zajištěna maximální stabilita vnitřních procesů."
+      ]
+    },
+    {
+      "version": "1.0.5",
+      "changelog": [
+        "[UX] Integrován chytrý zvýrazňovač textu (Highlighter) v Živém Editoru. Hledané výrazy se nyní okamžitě fialově podsvítí přímo v textu, a to dynamicky podle toho, zda vyhledáváte v klíčích, originálu nebo překladu.",
+        "[FIX] Opraven kritický problém s nekonečnou smyčkou a neustálým vyskakováním okna dostupné aktualizace každých 10 sekund. Implementována „Snooze“ pojistka, která po ručním zavření okna zamezí dalším výzvám během aktuální relace aplikace.",
+        "[FIX] Opraveno asynchronní řazení inicializačního cyklu. Systém nyní spolehlivě stáhne kompletní data dříve, než začne modal vyhodnocovat lokální cache, což definitivně zabraňuje zablokování okna na hlášce o stahování změn.",
+        "[SYS] Zaveden plnohodnotný záchranný offline režim pro aktualizace (Offline Fallback). Pokud spustíte aplikaci zcela bez internetu, program plynule natáhne historii změn z lokální šablony zabalené uvnitř sestavení.",
+        "[UX] Optimalizováno chování editačních polí pro překlad. Pokud v řádku zrovna nepíšete, text splyne s tabulkou pro plynulé vykreslení zvýrazněného hledání. Po kliknutí se řádek okamžitě přepne do plného editačního módu."
+      ]
+    },
+    {
+      "version": "1.0.4",
+      "changelog": [
+        "[FIX] Vyřešen kritický problém s nenačítáním a nemožností zakládat cloudové projekty v produkčním buildu zabalené aplikace (Race Condition). Inicializace identity uživatele, ověřování systémových rolí a stahování dat ze Supabase byly sloučeny do jednoho striktně sekvenčního toku.",
+        "[SYS] Zvýšena stabilita relací v Electron prostředí. Systém nyní přednostně čte synchronní session data přímo z paměti aplikace, čímž eliminuje anomálie s chybějícími hlavičkami Origin/Referer na interních produkčních protokolech.",
+        "[SYS] Kompletně odstraněno nebezpečné tiché selhávání procesů (Silent Returns). V případě neočekávané síťové či databázové chyby aplikace vyhodí transparentní výjimku a okamžitě informuje uživatele skrze detailní Toast panel.",
+        "[UX] Dočasná záchranná pojistka: Pokud dashboard po updatu hned nezobrazí vaše legitimní projekty, pomůže jednorázové ruční odhlášení a opětovné přihlášení, které bezpečně propláchne starou mezipaměť (cache) s předchozím stavem práv."
+      ]
+    },
+    {
+      "version": "1.0.3",
+      "changelog": [
+        "[NEW] Nasazena prémiová startovací obrazovka (Splash Screen) s pulzujícím glow efektem a plynulou animací loga studia, která vizuálně sjednocuje inicializaci prostředí s přihlašováním.",
+        "[NEW] Integrován plnohodnotný zakázkový Delete Modal pro trvalé odstraňování projektů. Nahrazuje původní systémový dialog moderním rozhraním s bezpečnostní pojistkou opisování názvu a bleskovým kopírováním do schránky.",
+        "[SEC] Zpřísněna bezpečnostní RLS práva na dashboardu cloudových projektů. Běžní uživatelé a testeři nyní vidí striktně pouze projekty, do kterých byli ručně přiřazeni (Moderátoři a Admini mají nadále plný globální přístup)."
+      ]
+    },
+    {
+      "version": "1.0.2",
+      "changelog": [
+        "[NEW] Nasazen živý aktualizační hlídač (Live Update Watcher). Aplikace nyní automaticky kontroluje dostupnost nových verzí na serveru každých 10 sekund za plného provozu bez nutnosti restartování studia.",
+        "[FIX] Opraveno tiché zapisování prázdné hodnoty (NULL) do sloupce 'last_edited_by' při ukládání překladů.",
+        "[SYS] Implementováno tiché obnovování přístupových tokenů (Session Auto-Refresh) při online startu aplikace."
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "changelog": [
+        "[NEW] Plně automatický systém aktualizací. Aplikace nyní stahuje a spouští instalátor tiše na pozadí bez nutnosti otevírat prohlížeč.",
+        "[UX] Kompletní podpora pro 150% měřítko Windows. Nová responzivní horní lišta a chytré Hamburger menu pro rychlý přístup k sidebaru.",
+        "[FIX] Opraveno načítání profilů z databáze (RLS). V administraci a u cloud projektů se již korektně zobrazují jména a avatary."
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "changelog": [
+        "[NEW] První stabilní vydání LocAsync Studia pro interní tým.",
+        "[NEW] Nasazena živá synchronizace překladů v cloudu přes Supabase."
+      ]
+    }
+  ]
+}
