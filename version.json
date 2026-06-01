@@ -1,16 +1,27 @@
 {
-  "version": "1.1.0",
+  "version": "1.1.1",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.0/locasync-1.1.0.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.1/locasync-1.1.1.zip",
   "changelog": [
-    "[NEW] Zcela přepracován design horních karet v Živém Editoru, aby se vizuálně odlišil od venkovního dashboardu a nabídl specifické metriky pro překladatele (Originální segmenty, Předběžné překlady, Uzamčené korektury).",
-    "[NEW] Zaveden pokročilý interaktivní log „Historie Překladatelů“. Editor nyní na jedno kliknutí zobrazí detailní statistiku o všech členech týmu, kteří do vybraného projektu jakkoli zasáhli – včetně informací o celkovém počtu úprav a čase úplně poslední aktivity daného uživatele.",
-    "[NEW] Projektoví manažeři a administrátoři nyní mohou označit cloudový projekt jako zcela Dokončený. Projekt získá prémiový jantarový design, exkluzivní pečeť a jasně se vyčlení od probíhajících překladů.",
-    "[SEC] Aplikován hard-lock pro dokončené projekty (Read-Only Mód). Jakmile vedení projekt uzavře, celá struktura v Živém Editoru se napříč celým týmem nezvratně uzamkne proti dalším úpravám, nahrazování či ukládání změn.",
-    "[UX] Na hlavní nástěnku (Dashboard) přidána chytrá vyhledávací a filtrovací lišta. Projekty nyní můžete okamžitě filtrovat podle názvu, stavu kompletace nebo si zobrazit pouze vaši vlastní agendu.",
-    "[UX] Optimalizace Modálních oken: Z důvodu čistšího designu a sjednocení vizuální identity byly ze systémových pop-up oken odstraněny přebytečné horní křížky. Zpřehlednila se také integrace vestavěného Changelogu pro budoucí updaty."
+    "[NEW] Představen zbrusu nový samostatný modul „Pak Repaker“. Nyní je možné kompilovat celou adresářovou strukturu překladu přímo do finálního herního balíčku .pak pomocí integrovaného nástroje repak.exe.",
+    "[FIX] Definitivní oprava nefunkčního stahování a detekce aktualizací. Síťový dotaz na soubor version.json byl kompletně přesunut z React frontendu do Electron backendu (Main Process) na nativní Node.js HTTPS protokol, čímž se stoprocentně obchází restrikce Content Security Policy (CSP).",
+    "[SYS] Kompletně přepracován a zabezpečen preload můstek (Preload Bridge). Přidána nová nativní IPC rozhraní (selectPakSavePath, packPak) pro spolehlivý přenos dat mezi React frontendem a Node.js backendem.",
+    "[UX] Do postranního panelu (Sidebar) a horní lišty (Navbar) přidána nová dedikovaná jantarová karta pro okamžitý přístup k nástroji Repakeru s podporou pro rychlou klávesovou zkratku Alt+6."
   ],
   "history": [
+    {
+      "version": "1.1.0",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.0/locasync-1.1.0.zip",
+      "changelog": [
+        "[NEW] Zcela přepracován design horních karet v Živém Editoru, aby se vizuálně odlišil od venkovního dashboardu a nabídl specifické metriky pro překladatele (Originální segmenty, Předběžné překlady, Uzamčené korektury).",
+        "[NEW] Zaveden pokročilý interaktivní log „Historie Překladatelů“. Editor nyní na jedno kliknutí zobrazí detailní statistiku o všech členech týmu, kteří do vybraného projektu jakkoli zasáhli – včetně informací o celkovém počtu úprav a čase úplně poslední aktivity daného uživatele.",
+        "[NEW] Projektoví manažeři a administrátoři nyní mohou označit cloudový projekt jako zcela Dokončený. Projekt získá prémiový jantarový design, exkluzivní pečeť a jasně se vyčlení od probíhajících překladů.",
+        "[SEC] Aplikován hard-lock pro dokončené projekty (Read-Only Mód). Jakmile vedení projekt uzavře, celá struktura v Živém Editoru se napříč celým týmem nezvratně uzamkne proti dalším úpravám, nahrazování či ukládání změn.",
+        "[UX] Na hlavní nástěnku (Dashboard) přidána chytrá vyhledávací a filtrovací lišta. Projekty nyní můžete okamžitě filtrovat podle názvu, stavu kompletace nebo si zobrazit pouze vaši vlastní agendu.",
+        "[UX] Optimalizace Modálních oken: Z důvodu čistšího designu a sjednocení vizuální identity byly ze systémových pop-up oken odstraněny přebytečné horní křížky. Zpřehlednila se také integrace vestavěného Changelogu pro budoucí updaty."
+      ]
+    },
     {
       "version": "1.0.9",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
@@ -18,7 +29,7 @@
       "changelog": [
         "[FIX] Inteligentní normalizace plochých lokalizačních klíčů. Pokud herní .locres soubory obsahují čisté MD5/Hex hashe bez jmenného prostoru, editor automaticky odmaže nevzhledná úvodní lomítka a dvojtečky pro dokonale čistý data grid. Původní systémový tvar pro C# kompilátor zůstává bezpečně zachován v pozadí.",
         "[FIX] Zajištění striktního jednořádkového formátu při exportu do CSV. Pomocné editační značky zalomení <cf> a <lf> jsou při běžném exportu ponechány jako textové tagy. To garantuje, že se rozsáhlé textové bloky (např. PDA deníky) nerozpadnou na více řádků a externí překladače či AI je zpracují bez poškození struktury.",
-        "[SYS] Odstraněn zapomenutý import ikony FileText z hlavičky souboru a kompletně vyčištěny strict chyby linteru, které dříve nekompromisně blokovaly produkční build celé aplikace."
+        "[SYS] Odstraněn zapomenutý import ikony FileText z hlavičke souboru a kompletně vyčištěny strict chyby linteru, které dříve nekompromisně blokovaly produkční build celé aplikace."
       ]
     },
     {
@@ -27,7 +38,7 @@
       "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.0.8/locasync-1.0.8.zip",
       "changelog": [
         "[FIX] Kritická oprava chování Locres Packeru při kompilaci do .locres souborů. Třetí sloupec se již nevynechává a je vždy korektně vygenerován, aby nedocházelo k chybám IndexOutOfRange v C# kompilátoru.",
-        "[FIX] Zcela přepsán algoritmus importu a exportu tabulek (PapaParse integrace). Nyní systém perfektně a bezpečně zpracovává texty, které uvnitř obsahují reálné čárky, aniž by došlo k nechtěnému rozpadu sloupců či zničení struktury.",
+        "[FIX] Zcela přepsán algorithmus importu a exportu tabulek (PapaParse integrace). Nyní systém perfektně a bezpečně zpracovává texty, které uvnitř obsahují reálné čárky, aniž by došlo k nechtěnému rozpadu sloupců či zničení struktury.",
         "[UX] Export z Packeru do běžného .csv souboru je nyní pročištěn a striktně dvousloupcový (Klíč + Zdroj). Editor již na konec řádků negeneruje prázdné oddělovače (visící čárky)."
       ]
     },
@@ -79,7 +90,7 @@
     {
       "version": "1.0.2",
       "changelog": [
-        "[NEW] Nasazen živý aktualizační hlídač (Live Update Watcher). Aplikace nyní automaticky kontroluje dostupnost nových verzí na serveru každých 10 sekund za plného provozu bez nutnosti restartování studia.",
+        "[NEW] Nasazen živý aktualizační hlídač (Live Update Watcher). Aplikace nyní automaticky kontroluje dostupnost nowych verzí na serveru každých 10 sekund za plného provozu bez nutnosti restartování studia.",
         "[FIX] Opraveno tiché zapisování prázdné hodnoty (NULL) do sloupce 'last_edited_by' při ukládání překladů.",
         "[SYS] Implementováno tiché obnovování přístupových tokenů (Session Auto-Refresh) při online startu aplikace."
       ]
