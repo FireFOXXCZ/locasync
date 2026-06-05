@@ -1,14 +1,24 @@
 {
-  "version": "1.1.1",
+  "version": "1.1.2",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.1/locasync-1.1.1.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.2/locasync-1.1.2.zip",
   "changelog": [
-    "[NEW] Představen zbrusu nový samostatný modul „Pak Repaker“. Nyní je možné kompilovat celou adresářovou strukturu překladu přímo do finálního herního balíčku .pak pomocí integrovaného nástroje repak.exe.",
-    "[FIX] Definitivní oprava nefunkčního stahování a detekce aktualizací. Síťový dotaz na soubor version.json byl kompletně přesunut z React frontendu do Electron backendu (Main Process) na nativní Node.js HTTPS protokol, čímž se stoprocentně obchází restrikce Content Security Policy (CSP).",
-    "[SYS] Kompletně přepracován a zabezpečen preload můstek (Preload Bridge). Přidána nová nativní IPC rozhraní (selectPakSavePath, packPak) pro spolehlivý přenos dat mezi React frontendem a Node.js backendem.",
-    "[UX] Do postranního panelu (Sidebar) a horní lišty (Navbar) přidána nová dedikovaná jantarová karta pro okamžitý přístup k nástroji Repakeru s podporou pro rychlou klávesovou zkratku Alt+6."
+    "[NEW] Do modulu Pak Repaker bylo integrováno nové dedikované textové pole. Uživatelé si nyní mohou přímo v rozhraní aplikace pojmenovat výsledný .pak soubor před samotnou kompilací (včetně automatické kontroly přípony).",
+    "[FIX] V Lokalizačním Injektoru byl vyřešen problém se zbytečným přidáváním uvozovek okolo textů. Systém nyní vstupní data čistí (ořezává mezery na začátku/konci) a export do CSV byl nastaven tak, aby uvozovky používal jen při striktní nutnosti (např. při výskytu čárky ve větě).",
+    "[FIX] Upravena logika slučování CSV tabulek v Injektoru. Pokud při tvorbě nového sloupce chybí pro daný klíč překlad, editor nyní pole korektně ponechá prázdné, místo aby ho přeskočil."
   ],
   "history": [
+    {
+      "version": "1.1.1",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.1/locasync-1.1.1.zip",
+      "changelog": [
+        "[NEW] Představen zbrusu nový samostatný modul „Pak Repaker“. Nyní je možné kompilovat celou adresářovou strukturu překladu přímo do finálního herního balíčku .pak pomocí integrovaného nástroje repak.exe.",
+        "[FIX] Definitivní oprava nefunkčního stahování a detekce aktualizací. Síťový dotaz na soubor version.json byl kompletně přesunut z React frontendu do Electron backendu (Main Process) na nativní Node.js HTTPS protokol, čímž se stoprocentně obchází restrikce Content Security Policy (CSP).",
+        "[SYS] Kompletně přepracován a zabezpečen preload můstek (Preload Bridge). Přidána nová nativní IPC rozhraní (selectPakSavePath, packPak) pro spolehlivý přenos dat mezi React frontendem a Node.js backendem.",
+        "[UX] Do postranního panelu (Sidebar) a horní lišty (Navbar) přidána nová dedikovaná jantarová karta pro okamžitý přístup k nástroji Repakeru s podporou pro rychlou klávesovou zkratku Alt+6."
+      ]
+    },
     {
       "version": "1.1.0",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
