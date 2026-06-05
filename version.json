@@ -1,13 +1,24 @@
 {
-  "version": "1.1.2",
+  "version": "1.1.3",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.2/locasync-1.1.2.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.3/locasync-1.1.3.zip",
   "changelog": [
-    "[NEW] Do modulu Pak Repaker bylo integrováno nové dedikované textové pole. Uživatelé si nyní mohou přímo v rozhraní aplikace pojmenovat výsledný .pak soubor před samotnou kompilací (včetně automatické kontroly přípony).",
-    "[FIX] V Lokalizačním Injektoru byl vyřešen problém se zbytečným přidáváním uvozovek okolo textů. Systém nyní vstupní data čistí (ořezává mezery na začátku/konci) a export do CSV byl nastaven tak, aby uvozovky používal jen při striktní nutnosti (např. při výskytu čárky ve větě).",
-    "[FIX] Upravena logika slučování CSV tabulek v Injektoru. Pokud při tvorbě nového sloupce chybí pro daný klíč překlad, editor nyní pole korektně ponechá prázdné, místo aby ho přeskočil."
+    "[NEW] Implementován modul pro AI překlady skrze DeepL API. Veškerá komunikace s API byla přesunuta do Electron backendu, což umožňuje plnou funkčnost bez omezení Content Security Policy.",
+    "[NEW] Přidána funkce hromadného AI překladu pro celou stránku editoru jedním kliknutím pro maximální zrychlení práce.",
+    "[FIX] Zvýšena odolnost systému stahování aktualizací. Aplikace nyní správně zpracovává HTTP přesměrování (kód 302) při stahování instalátoru, což řeší předchozí chyby při updatech.",
+    "[SYS] Optimalizace práce s uvozovkami u AI překladů – systém nyní automaticky čistí typografické uvozovky, aby nedocházelo ke konfliktům s formátem hry."
   ],
   "history": [
+    {
+      "version": "1.1.2",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.2/locasync-1.1.2.zip",
+      "changelog": [
+        "[NEW] Do modulu Pak Repaker bylo integrováno nové dedikované textové pole. Uživatelé si nyní mohou přímo v rozhraní aplikace pojmenovat výsledný .pak soubor před samotnou kompilací (včetně automatické kontroly přípony).",
+        "[FIX] V Lokalizačním Injektoru byl vyřešen problém se zbytečným přidáváním uvozovek okolo textů. Systém nyní vstupní data čistí (ořezává mezery na začátku/konci) a export do CSV byl nastaven tak, aby uvozovky používal jen při striktní nutnosti (např. při výskytu čárky ve větě).",
+        "[FIX] Upravena logika slučování CSV tabulek v Injektoru. Pokud při tvorbě nového sloupce chybí pro daný klíč překlad, editor nyní pole korektně ponechá prázdné, místo aby ho přeskočil."
+      ]
+    },
     {
       "version": "1.1.1",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
@@ -100,7 +111,7 @@
     {
       "version": "1.0.2",
       "changelog": [
-        "[NEW] Nasazen živý aktualizační hlídač (Live Update Watcher). Aplikace nyní automaticky kontroluje dostupnost nowych verzí na serveru každých 10 sekund za plného provozu bez nutnosti restartování studia.",
+        "[NEW] Nasazen živý aktualizační hlídač (Live Update Watcher). Aplikace nyní automaticky kontroluje dostupnost nových verzí na serveru každých 10 sekund za plného provozu bez nutnosti restartování studia.",
         "[FIX] Opraveno tiché zapisování prázdné hodnoty (NULL) do sloupce 'last_edited_by' při ukládání překladů.",
         "[SYS] Implementováno tiché obnovování přístupových tokenů (Session Auto-Refresh) při online startu aplikace."
       ]
