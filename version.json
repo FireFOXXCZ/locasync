@@ -1,14 +1,27 @@
 {
-  "version": "1.1.5",
+  "version": "1.1.6",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.5/locasync-1.1.5.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.6/locasync-1.1.6.zip",
   "changelog": [
-    "[NEW] Zcela nový modul „Osobní profil a statistiky“. Uživatelé nyní mají svůj vlastní panel, kde mohou sledovat svůj progres, celkový počet úprav, kvalitu překladů (Win Rate) a aktivní pracovní dny (streak).",
-    "[NEW] Zavedena gamifikace pro překladatele: Systém XP úrovní a „Síň slávy“. Za aktivitu a bezchybné překlady nyní uživatelé odemykají speciální odznaky přímo na svůj profil (např. První krev, Perfekcionista, Knihovník).",
-    "[FIX] Vyřešena kritická chyba s „falešným přihlášením“. Pokud je uživatelský účet smazán nebo zablokován, systém to okamžitě detekuje přes Realtime monitor, bezpečně vyčistí lokální mezipaměť (localStorage) a vynutí návrat na přihlašovací obrazovku.",
-    "[SYS] Rozsáhlá optimalizace vykreslovacího cyklu a správy stavů (Strict React Hooks). Synchronizační smyčka a WebSockety byly kompletně přepsány a obaleny do asynchronních funkcí, což eliminuje zamrzání rozhraní (cascading renders) a zvyšuje stabilitu aplikace."
+    "[NEW] Kompletní redesign osobního profilu: Přidán pokročilý dashboard statistik s detailním přehledem aktivity, vypočítávaným pracovním streaku (aktivní dny) a úrovňovým systémem (Leveling XP).",
+    "[NEW] Přidána funkce 'Přepočítat statistiky': Uživatelé si nyní mohou kdykoliv manuálně vynutit obnovu svých dat a achievementů přímo ze serveru přes nové tlačítko v profilu.",
+    "[SYS] Implementace real-time detekce kolizí v Editoru: Přidán monitorovací mechanismus pro sledování vzdálených změn v databázi. Systém nyní vizuálně zvýrazňuje řádky upravené ostatními členy týmu v reálném čase, čímž eliminuje riziko přepisování práce kolegů.",
+    "[UX] Optimalizace vizuálu Síň slávy: Opraveno vykreslování ohraničení odznaků, které nyní dynamicky přebírá barvy z databáze a nedochází k nechtěnému zobrazení výchozí bílé barvy (CSS fallbacky).",
+    "[FIX] Stabilizace logiky aktivních dní: Implementován algoritmus pro výpočet pracovního streaku na základě historie úprav v databázi (updated_at/created_at), který přesně určuje, kolik dní v řadě uživatel aktivně překládal.",
+    "[SYS] Odlehčení synchronizačního cyklu: Profilové statistiky se nyní načítají separátně od hlavní projektové agendy, což eliminuje zbytečné prodlevy při startu aplikace."
   ],
   "history": [
+    {
+      "version": "1.1.5",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.5/locasync-1.1.5.zip",
+      "changelog": [
+        "[NEW] Zcela nový modul „Osobní profil a statistiky“. Uživatelé nyní mají svůj vlastní panel, kde mohou sledovat svůj progres, celkový počet úprav, kvalitu překladů (Win Rate) a aktivní pracovní dny (streak).",
+        "[NEW] Zavedena gamifikace pro překladatele: Systém XP úrovní a „Síň slávy“. Za aktivitu a bezchybné překlady nyní uživatelé odemykají speciální odznaky přímo na svůj profil (např. První krev, Perfekcionista, Knihovník).",
+        "[FIX] Vyřešena kritická chyba s „falešným přihlášením“. Pokud je uživatelský účet smazán nebo zablokován, systém to okamžitě detekuje přes Realtime monitor, bezpečně vyčistí lokální mezipaměť (localStorage) a vynutí návrat na přihlašovací obrazovku.",
+        "[SYS] Rozsáhlá optimalizace vykreslovacího cyklu a správy stavů (Strict React Hooks). Synchronizační smyčka a WebSockety byly kompletně přepsány a obaleny do asynchronních funkcí, což eliminuje zamrzání rozhraní (cascading renders) a zvyšuje stabilitu aplikace."
+      ]
+    },
     {
       "version": "1.1.4",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
@@ -61,28 +74,24 @@
         "[NEW] Zaveden pokročilý interaktivní log „Historie Překladatelů“. Editor nyní na jedno kliknutí zobrazí detailní statistiku o všech členech týmu, kteří do vybraného projektu jakkoli zasáhli – včetně informací o celkovém počtu úprav a čase úplně poslední aktivity daného uživatele.",
         "[NEW] Projektoví manažeři a administrátoři nyní mohou označit cloudový projekt jako zcela Dokončený. Projekt získá prémiový jantarový design, exkluzivní pečeť a jasně se vyčlení od probíhajících překladů.",
         "[SEC] Aplikován hard-lock pro dokončené projekty (Read-Only Mód). Jakmile vedení projekt uzavře, celá struktura v Živém Editoru se napříč celým týmem nezvratně uzamkne proti dalším úpravám, nahrazování či ukládání změn.",
-        "[UX] Na hlavní nástěnku (Dashboard) přidána chytrá vyhledávací a filtrovací lišta. Projekty nyní můžete okamžitě filtrovat podle názvu, stavu kompletace nebo si zobrazit pouze vaši vlastní agendu.",
+        "[UX] Aplikována chytrá vyhledávací a filtrovací lišta. Projekty nyní můžete okamžitě filtrovat podle názvu, stavu kompletace nebo si zobrazit pouze vaši vlastní agendu.",
         "[UX] Optimalizace Modálních oken: Z důvodu čistšího designu a sjednocení vizuální identity byly ze systémových pop-up oken odstraněny přebytečné horní křížky. Zpřehlednila se také integrace vestavěného Changelogu pro budoucí updaty."
       ]
     },
     {
       "version": "1.0.9",
-      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.0.9/locasync-1.0.9.zip",
       "changelog": [
         "[FIX] Inteligentní normalizace plochých lokalizačních klíčů. Pokud herní .locres soubory obsahují čisté MD5/Hex hashe bez jmenného prostoru, editor automaticky odmaže nevzhledná úvodní lomítka a dvojtečky pro dokonale čistý data grid. Původní systémový tvar pro C# kompilátor zůstává bezpečně zachován v pozadí.",
-        "[FIX] Zajištění striktního jednořádkového formátu při exportu do CSV. Pomocné editační značky zalomení <cf> a <lf> jsou při běžném exportu ponechány jako textové tagy. To garantuje, že se rozsáhlé textové bloky (např. PDA deníky) nerozpadnou na více řádků a externí překladače či AI je zpracují bez poškození struktury.",
+        "[FIX] Zajištění striktního jednořádkového formátu při exportu do CSV. Pomocné editační značky zalomení <cf> a <lf> jsou při běžném exportu ponechány jako textové tagy.",
         "[SYS] Odstraněn zapomenutý import ikony FileText z hlavičke souboru a kompletně vyčištěny strict chyby linteru, které dříve nekompromisně blokovaly produkční build celé aplikace."
       ]
     },
     {
       "version": "1.0.8",
-      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.0.8/locasync-1.0.8.zip",
       "changelog": [
         "[FIX] Kritická oprava chování Locres Packeru při kompilaci do .locres souborů. Třetí sloupec se již nevynechává a je vždy korektně vygenerován, aby nedocházelo k chybám IndexOutOfRange v C# kompilátoru.",
         "[FIX] Zcela přepsán algorithmus importu a exportu tabulek (PapaParse integrace). Nyní systém perfektně a bezpečně zpracovává texty, které uvnitř obsahují reálné čárky, aniž by došlo k nechtěnému rozpadu sloupců či zničení struktury.",
-        "[UX] Export z Packeru do běžného .csv souboru je nyní pročištěn a striktně dvousloupcový (Klíč + Zdroj). Editor již na konec řádků negeneruje prázdné oddělovače (visící čárky)."
+        "[UX] Export z Packeru do běžného .csv souboru je nyní pročištěn a striktně dvousloupcový (Klíč + Zdroj)."
       ]
     },
     {
@@ -97,10 +106,10 @@
       "version": "1.0.6",
       "changelog": [
         "[NEW] Integrován inteligentní panel Hledat & Nahradit (Find & Replace) pro rychlou úpravu textů. Podporuje hromadné nahrazení všech vyfiltrovaných výsledků najednou oder postupné nahrazování.",
-        "[NEW] Přidána šipková navigace ve vyhledávání. Můžete plynule přeskakovat mezi nalezenými výsledky, přičemž vás editor automaticky odscrolluje na správné místo (a v případě potřeby i přepne stránku).",
+        "[NEW] Přidána šipková navigace ve vyhledávání. Můžete plynule přeskakovat mezi nalezenými výsledky, přičemž vás editor automaticky odscrolluje na správné místo.",
         "[UX] Zavedena rychlá klávesová zkratka: Při psaní do pole pro nahrazení stačí stisknout klávesu Enter. Výraz se okamžitě nahradí a editor vás rovnou přesune na další nalezený výskyt.",
         "[UX] Aktivní výsledek vyhledávání je nyní v tabulce výrazně vizuálně odlišen fialovým orámováním celého řádku a podsvícením jeho čísla pro dokonalou orientaci v textu.",
-        "[FIX] Rozsáhlá optimalizace výkonu a čištění kódu (Strict Linter Fixes). Odstraněno zbytečné dvojité renderování (cascading renders) při změně vyhledávacích filtrů a zajištěna maximální stabilita vnitřních procesů."
+        "[SYS] Rozsáhlá optimalizace výkonu a čištění kódu (Strict Linter Fixes). Odstraněno zbytečné dvojité renderování (cascading renders) při změně vyhledávacích filtrů a zajištěna maximální stabilita vnitřních procesů."
       ]
     },
     {
@@ -110,7 +119,7 @@
         "[FIX] Opraven kritický problém s nekonečnou smyčkou a neustálým vyskakováním okna dostupné aktualizace každých 10 sekund. Implementována „Snooze“ pojistka, která po ručním zavření okna zamezí dalším výzvám během aktuální relace aplikace.",
         "[FIX] Opraveno asynchronní řazení inicializačního cyklu. Systém nyní spolehlivě stáhne kompletní data dříve, než začne modal vyhodnocovat lokální cache, což definitivně zabraňuje zablokování okna na hlášce o stahování změn.",
         "[SYS] Zaveden plnohodnotný záchranný offline režim pro aktualizace (Offline Fallback). Pokud spustíte aplikaci zcela bez internetu, program plynule natáhne historii změn z lokální šablony zabalené uvnitř sestavení.",
-        "[UX] Optimalizováno chování editačních polí pro překlad. Pokud v řádku zrovna nepíšete, text splyne s tabulkou pro plynulé vykreslení zvýrazněného hledání. Po kliknutí se řádek okamžitě přepne do plného editačního módu."
+        "[UX] Optimalizováno chování editačních polí pro překlad. Pokud v řádku zrovna nepíšete, text splyne s tabulkou pro plynulé vykreslení zvýrazněného hledání."
       ]
     },
     {
@@ -127,7 +136,7 @@
       "changelog": [
         "[NEW] Nasazena prémiová startovací obrazovka (Splash Screen) s pulzujícím glow efektem a plynulou animací loga studia, která vizuálně sjednocuje inicializaci prostředí s přihlašováním.",
         "[NEW] Integrován plnohodnotný zakázkový Delete Modal pro trvalé odstraňování projektů. Nahrazuje původní systémový dialog moderním rozhraním s bezpečnostní pojistkou opisování názvu a bleskovým kopírováním do schránky.",
-        "[SEC] Zpřísněna bezpečnostní RLS práva na dashboardu cloudových projektů. Běžní uživatelé a testeři nyní vidí striktně pouze projekty, do kterých byli ručně přiřazeni (Moderátoři a Admini mají nadále plný globální přístup)."
+        "[SEC] Zpřísněna bezpečnostní RLS práva na dashboardu cloudových projektů. Běžní uživatelé a testeři nyní vidí striktně pouze projekty, do kterých byli ručně přiřazeni."
       ]
     },
     {
