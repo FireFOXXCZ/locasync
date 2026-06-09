@@ -1,16 +1,24 @@
 {
-  "version": "1.1.6",
+  "version": "1.1.7",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.6/locasync-1.1.6.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.7/locasync-1.1.7.zip",
   "changelog": [
-    "[NEW] Kompletní redesign osobního profilu: Přidán pokročilý dashboard statistik s detailním přehledem aktivity, vypočítávaným pracovním streaku (aktivní dny) a úrovňovým systémem (Leveling XP).",
-    "[NEW] Přidána funkce 'Přepočítat statistiky': Uživatelé si nyní mohou kdykoliv manuálně vynutit obnovu svých dat a achievementů přímo ze serveru přes nové tlačítko v profilu.",
-    "[SYS] Implementace real-time detekce kolizí v Editoru: Přidán monitorovací mechanismus pro sledování vzdálených změn v databázi. Systém nyní vizuálně zvýrazňuje řádky upravené ostatními členy týmu v reálném čase, čímž eliminuje riziko přepisování práce kolegů.",
-    "[UX] Optimalizace vizuálu Síň slávy: Opraveno vykreslování ohraničení odznaků, které nyní dynamicky přebírá barvy z databáze a nedochází k nechtěnému zobrazení výchozí bílé barvy (CSS fallbacky).",
-    "[FIX] Stabilizace logiky aktivních dní: Implementován algoritmus pro výpočet pracovního streaku na základě historie úprav v databázi (updated_at/created_at), který přesně určuje, kolik dní v řadě uživatel aktivně překládal.",
-    "[SYS] Odlehčení synchronizačního cyklu: Profilové statistiky se nyní načítají separátně od hlavní projektové agendy, což eliminuje zbytečné prodlevy při startu aplikace."
+    "[FIX] Oprava kritické chyby způsobující pád celého editoru (černá obrazovka) při zadání speciálních znaků (např. kulatých závorek) do vyhledávacího pole. Systém nyní tyto znaky bezpečně filtruje, takže zvýrazňovač textu funguje stabilně za všech okolností."
   ],
   "history": [
+    {
+      "version": "1.1.6",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.6/locasync-1.1.6.zip",
+      "changelog": [
+        "[NEW] Kompletní redesign osobního profilu: Přidán pokročilý dashboard statistik s detailním přehledem aktivity, vypočítávaným pracovním streaku (aktivní dny) a úrovňovým systémem (Leveling XP).",
+        "[NEW] Přidána funkce 'Přepočítat statistiky': Uživatelé si nyní mohou kdykoliv manuálně vynutit obnovu svých dat a achievementů přímo ze serveru přes nové tlačítko v profilu.",
+        "[SYS] Implementace real-time detekce kolizí v Editoru: Přidán monitorovací mechanismus pro sledování vzdálených změn v databázi. Systém nyní vizuálně zvýrazňuje řádky upravené ostatními členy týmu v reálném čase, čímž eliminuje riziko přepisování práce kolegů.",
+        "[UX] Optimalizace vizuálu Síň slávy: Opraveno vykreslování ohraničení odznaků, které nyní dynamicky přebírá barvy z databáze a nedochází k nechtěnému zobrazení výchozí bílé barvy (CSS fallbacky).",
+        "[FIX] Stabilizace logiky aktivních dní: Implementován algoritmus pro výpočet pracovního streaku na základě historie úprav v databázi (updated_at/created_at), který přesně určuje, kolik dní v řadě uživatel aktivně překládal.",
+        "[SYS] Odlehčení synchronizačního cyklu: Profilové statistiky se nyní načítají separátně od hlavní projektové agendy, což eliminuje zbytečné prodlevy při startu aplikace."
+      ]
+    },
     {
       "version": "1.1.5",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
