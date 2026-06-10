@@ -1,13 +1,26 @@
 {
-  "version": "1.1.8",
+  "version": "1.1.9",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.8/locasync-1.1.8.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.9/locasync-1.1.9.zip",
   "changelog": [
-    "[NEW] Zbrusu nový modul „Centrum nápovědy a dokumentace“. Přidán interaktivní průvodce, který detailně vysvětluje celý proces lokalizace Unreal Engine her (od extrakce přes FModel, přes práci s tabulkami až po IO Store pravidla a _P patche).",
-    "[UX] Kompletní modernizace tooltipů v modulu Locres Packer. Zastaralé systémové title bubliny byly nahrazeny plynulými a plně nastylovanými CSS tooltopy s ohledem na prémiový dark design aplikace.",
-    "[SYS] Do postranního panelu (Sidebar) a horní lišty přidána podpora pro novou sekci Nápovědy včetně podpory pro rychlou klávesovou zkratku Alt+9."
+    "[NEW] Zbrusu nový modul „Interaktivní Terminologický Slovník“. Přidáno prostorné plovoucí okno (draggable widget) pro správu a sjednocení herní terminologie napříč celým překladem.",
+    "[UX] Chytrá detekce v textu a Tooltipy: Pojmy uložené ve slovníku se nyní v originálním textu Editoru automaticky tečkovaně podtrhávají. Po najetí myší okamžitě vyskočí moderní tooltip se schváleným překladem a poznámkou pro překladatele.",
+    "[UX] Rychlé přidávání pojmů (Quick Add): Označením jakéhokoliv textu v tabulce a stisknutím klávesové zkratky Ctrl+D se slovník bleskově otevře s již předvyplněným originálním výrazem.",
+    "[SYS] Architektura duálního úložiště: Slovník automaticky rozeznává režim práce. U cloudových projektů se změny synchronizují v reálném čase všem členům týmu (Supabase Realtime), u offline souborů se ukládá lokálně do mezipaměti workspace.",
+    "[SYS] Bleskově plynulé přesouvání plovoucího okna po obrazovce pomocí synchronizace s obnovovací frekvencí monitoru (requestAnimationFrame).",
+    "[NEW] Přidána podpora pro okamžitý nativní export celého slovníku včetně poznámek do čistého formátu CSV."
   ],
   "history": [
+    {
+      "version": "1.1.8",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.8/locasync-1.1.8.zip",
+      "changelog": [
+        "[NEW] Zbrusu nový modul „Centrum nápovědy a dokumentace“. Přidán interaktivní průvodce, který detailně vysvětluje celý proces lokalizace Unreal Engine her (od extrakce přes FModel, přes práci s tabulkami až po IO Store pravidla a _P patche).",
+        "[UX] Kompletní modernizace tooltipů v modulu Locres Packer. Zastaralé systémové title bubliny byly nahrazeny plynulými a plně nastylovanými CSS tooltopy s ohledem na prémiový dark design aplikace.",
+        "[SYS] Do postranního panelu (Sidebar) a horní lišty přidána podpora pro novou sekci Nápovědy včetně podpory pro rychlou klávesovou zkratku Alt+9."
+      ]
+    },
     {
       "version": "1.1.7",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
