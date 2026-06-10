@@ -1,11 +1,21 @@
 {
-  "version": "1.1.7",
+  "version": "1.1.8",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.7/locasync-1.1.7.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.8/locasync-1.1.8.zip",
   "changelog": [
-    "[FIX] Oprava kritické chyby způsobující pád celého editoru (černá obrazovka) při zadání speciálních znaků (např. kulatých závorek) do vyhledávacího pole. Systém nyní tyto znaky bezpečně filtruje, takže zvýrazňovač textu funguje stabilně za všech okolností."
+    "[NEW] Zbrusu nový modul „Centrum nápovědy a dokumentace“. Přidán interaktivní průvodce, který detailně vysvětluje celý proces lokalizace Unreal Engine her (od extrakce přes FModel, přes práci s tabulkami až po IO Store pravidla a _P patche).",
+    "[UX] Kompletní modernizace tooltipů v modulu Locres Packer. Zastaralé systémové title bubliny byly nahrazeny plynulými a plně nastylovanými CSS tooltopy s ohledem na prémiový dark design aplikace.",
+    "[SYS] Do postranního panelu (Sidebar) a horní lišty přidána podpora pro novou sekci Nápovědy včetně podpory pro rychlou klávesovou zkratku Alt+9."
   ],
   "history": [
+    {
+      "version": "1.1.7",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.7/locasync-1.1.7.zip",
+      "changelog": [
+        "[FIX] Oprava kritické chyby způsobující pád celého editoru (černá obrazovka) při zadání speciálních znaků (např. kulatých závorek) do vyhledávacího pole. Systém nyní tyto znaky bezpečně filtruje, takže zvýrazňovač textu funguje stabilně za všech okolností."
+      ]
+    },
     {
       "version": "1.1.6",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
