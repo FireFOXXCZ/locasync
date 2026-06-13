@@ -1,16 +1,34 @@
 {
-  "version": "1.1.9",
+  "version": "2.0.0",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.9/locasync-1.1.9.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.0.0/locasync-2.0.0.zip",
   "changelog": [
-    "[NEW] Zbrusu nový modul „Interaktivní Terminologický Slovník“. Přidáno prostorné plovoucí okno (draggable widget) pro správu a sjednocení herní terminologie napříč celým překladem.",
-    "[UX] Chytrá detekce v textu a Tooltipy: Pojmy uložené ve slovníku se nyní v originálním textu Editoru automaticky tečkovaně podtrhávají. Po najetí myší okamžitě vyskočí moderní tooltip se schváleným překladem a poznámkou pro překladatele.",
-    "[UX] Rychlé přidávání pojmů (Quick Add): Označením jakéhokoliv textu v tabulce a stisknutím klávesové zkratky Ctrl+D se slovník bleskově otevře s již předvyplněným originálním výrazem.",
-    "[SYS] Architektura duálního úložiště: Slovník automaticky rozeznává režim práce. U cloudových projektů se změny synchronizují v reálném čase všem členům týmu (Supabase Realtime), u offline souborů se ukládá lokálně do mezipaměti workspace.",
-    "[SYS] Bleskově plynulé přesouvání plovoucího okna po obrazovce pomocí synchronizace s obnovovací frekvencí monitoru (requestAnimationFrame).",
-    "[NEW] Přidána podpora pro okamžitý nativní export celého slovníku včetně poznámek do čistého formátu CSV."
+    "[NEW] Plná integrace do systémové lišty (Tray). Aplikaci je nyní možné nechat běžet na pozadí, aniž by překážela na hlavním panelu.",
+    "[NEW] Přidáno prémiové modální okno při zavírání aplikace (kliknutí na křížek). Uživatel si může vybrat, zda chce program skrýt nebo úplně ukončit, a svou volbu si může trvale zapamatovat.",
+    "[UX] Kompletní redesign prvků v Nastavení. Zastaralé systémové roletky byly nahrazeny moderními interaktivními dropdowny s ikonami a plynulými animacemi, které dokonale ladí s dark-themed UI.",
+    "[FIX] Vylepšena identifikace procesu v systému Windows. Zkompilovaná aplikace se nyní ve Správci úloh i na liště všude korektně hlásí jako „LocAsync Studio“ namísto obecného označení Electron.",
+    "[NEW] Terminologický slovník 2.0: Přidán 'Click-to-Insert' – kliknutím na podtržený termín v originálu se jeho schválený překlad okamžitě vloží do textary.",
+    "[NEW] Správa slovníku: Přidána editace pojmů (ikona tužky) pro snadné opravy a hromadný import slovníku z CSV souborů.",
+    "[SYS] Vylepšený Regex pro slovník: Detekce pojmů nyní respektuje hranice slov (celé výrazy), což eliminuje chybné zvýrazňování uvnitř jiných slov.",
+    "[NEW] Ochrana formátovacích značek (Tag Protection): Editor nyní automaticky hlídá přítomnost značek jako <cf> či <lf> a varuje překladatele, pokud v překladu chybí.",
+    "[NEW] Historie úprav u řádku: Po najetí na ikonu stavu překladu se zobrazí tooltip s informací, kdo a kdy naposledy řádek upravil.",
+    "[NEW] Multiselect akce: Přidány checkboxy pro hromadný výběr řádků – nyní lze jedním kliknutím spustit AI překlad nebo schválení pouze pro vybrané segmenty.",
+    "[UX] Filtr 'Moje práce': Přidán nový filtr v editoru pro okamžité zobrazení pouze těch překladů, které vytvořil nebo upravil přihlášený uživatel."
   ],
   "history": [
+    {
+      "version": "1.1.9",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/1.1.9/locasync-1.1.9.zip",
+      "changelog": [
+        "[NEW] Zbrusu nový modul „Interaktivní Terminologický Slovník“. Přidáno prostorné plovoucí okno (draggable widget) pro správu a sjednocení herní terminologie napříč celým překladem.",
+        "[UX] Chytrá detekce v textu a Tooltipy: Pojmy uložené ve slovníku se nyní v originálním textu Editoru automaticky tečkovaně podtrhávají. Po najetí myší okamžitě vyskočí moderní tooltip se schváleným překladem a poznámkou pro překladatele.",
+        "[UX] Rychlé přidávání pojmů (Quick Add): Označením jakéhokoliv textu v tabulce a stisknutím klávesové zkratky Ctrl+D se slovník bleskově otevře s již předvyplněným originálním výrazem.",
+        "[SYS] Architektura duálního úložiště: Slovník automaticky rozeznává režim práce. U cloudových projektů se synchronizují změny v reálném čase všem členům týmu (Supabase Realtime), u offline souborů se ukládá lokálně do mezipaměti workspace.",
+        "[SYS] Bleskově plynulé přesouvání plovoucího okna po obrazovce pomocí synchronizace s obnovovací frekvencí monitoru (requestAnimationFrame).",
+        "[NEW] Přidána podpora pro okamžitý nativní export celého slovníku včetně poznámek do čistého formátu CSV."
+      ]
+    },
     {
       "version": "1.1.8",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
