@@ -1,21 +1,37 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.0.0/locasync-2.0.0.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.0.1/locasync-2.0.1.zip",
   "changelog": [
-    "[NEW] Plná integrace do systémové lišty (Tray). Aplikaci je nyní možné nechat běžet na pozadí, aniž by překážela na hlavním panelu.",
-    "[NEW] Přidáno prémiové modální okno při zavírání aplikace (kliknutí na křížek). Uživatel si může vybrat, zda chce program skrýt nebo úplně ukončit, a svou volbu si může trvale zapamatovat.",
-    "[UX] Kompletní redesign prvků v Nastavení. Zastaralé systémové roletky byly nahrazeny moderními interaktivními dropdowny s ikonami a plynulými animacemi, které dokonale ladí s dark-themed UI.",
-    "[FIX] Vylepšena identifikace procesu v systému Windows. Zkompilovaná aplikace se nyní ve Správci úloh i na liště všude korektně hlásí jako „LocAsync Studio“ namísto obecného označení Electron.",
-    "[NEW] Terminologický slovník 2.0: Přidán 'Click-to-Insert' – kliknutím na podtržený termín v originálu se jeho schválený překlad okamžitě vloží do textary.",
-    "[NEW] Správa slovníku: Přidána editace pojmů (ikona tužky) pro snadné opravy a hromadný import slovníku z CSV souborů.",
-    "[SYS] Vylepšený Regex pro slovník: Detekce pojmů nyní respektuje hranice slov (celé výrazy), což eliminuje chybné zvýrazňování uvnitř jiných slov.",
-    "[NEW] Ochrana formátovacích značek (Tag Protection): Editor nyní automaticky hlídá přítomnost značek jako <cf> či <lf> a varuje překladatele, pokud v překladu chybí.",
-    "[NEW] Historie úprav u řádku: Po najetí na ikonu stavu překladu se zobrazí tooltip s informací, kdo a kdy naposledy řádek upravil.",
-    "[NEW] Multiselect akce: Přidány checkboxy pro hromadný výběr řádků – nyní lze jedním kliknutím spustit AI překlad nebo schválení pouze pro vybrané segmenty.",
-    "[UX] Filtr 'Moje práce': Přidán nový filtr v editoru pro okamžité zobrazení pouze těch překladů, které vytvořil nebo upravil přihlášený uživatel."
+    "[NEW] Multi-tenant architektura týmů (Skupiny): Aplikace přechází z jednoho globálního prostoru na systém oddělených týmů. Každý uživatel si nyní může založit vlastní překladatelský tým, do kterého přiděluje projekty a zve další členy, kterým v rámci skupiny nastavuje unikátní role a práva.",
+    "[NEW] Hybridní panel Administrace: Zásadně přepracovaný systém správy účtů. Pomocí nové inteligentní roletky v horní liště mohou zakladatelé aplikace přepínat mezi 'Centrální globální správou' a správou uživatelů uvnitř konkrétních týmů, které vlastní.",
+    "[SEC] Striktní hierarchie uživatelských práv: Majitel týmu má nyní nad svým týmem plnou kontrolu (včetně práv vyhazovat a povyšovat na administrátory), zatímco týmový administrátor může spravovat pouze nižší role a nemůže zasahovat do nastavení majitele ani globálního vývojáře.",
+    "[SEC] Odstranění zacyklení v RLS politikách (500 Error): Kompletně přepsána bezpečnostní pravidla přímo na backendu (Supabase). Databáze nyní ověřuje přístupy do skupin pomocí bezpečných nerekurzivních poddotazů, což zrychlilo načítání a odstranilo pády API.",
+    "[FIX] Oprava kritické chyby stahování projektů (400 Error): Rozhraní pro zobrazení projektů a týmů nyní korektně cílí na nové oddělené databázové tabulky (global_roles, global_status) namísto starých vyřazených sloupců.",
+    "[FIX] Odkazy na zákaznickou podporu: E-mailové adresy v uživatelském rozhraní, u zamítnutých žádostí a čekajících profilů, byly dynamicky nahrazeny přímým proklikem na komunitní Discord pro urychlení řešení problémů.",
+    "[FIX] Opravena pozice a zobrazení informačních tooltipů v tabulce. Tooltipy (např. u výběru celé stránky či statusu překladu) nyní u horních řádků chytře vyskakují směrem dolů a zobrazují plné jméno i avatara překladatele bez ořezávání.",
+    "[UX] Z horní lišty editoru bylo odstraněno nadbytečné tlačítko „AI Stránka“. Hromadný AI překlad nyní exkluzivně a přehledněji spravuje spodní plovoucí multiselect lišta.",
+    "[SYS] Výrazná optimalizace paměti a rychlosti vykreslování Živého Editoru. Byly refaktorovány odvozené stavy (odstraněno zbytečné useMemo) a kompletně vyčištěna logika závislostí pro rychlejší chod bez chyb a varování Linteru."
   ],
   "history": [
+    {
+      "version": "2.0.0",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.0.0/locasync-2.0.0.zip",
+      "changelog": [
+        "[NEW] Plná integrace do systémové lišty (Tray). Aplikaci je nyní možné nechat běžet na pozadí, aniž by překážela na hlavním panelu.",
+        "[NEW] Přidáno prémiové modální okno při zavírání aplikace (kliknutí na křížek). Uživatel si může vybrat, zda chce program skrýt nebo úplně ukončit, a svou volbu si může trvale zapamatovat.",
+        "[UX] Kompletní redesign prvků v Nastavení. Zastaralé systémové roletky byly nahrazeny moderními interaktivními dropdowny s ikonami a plynulými animacemi, které dokonale ladí s dark-themed UI.",
+        "[FIX] Vylepšena identifikace procesu v systému Windows. Zkompilovaná aplikace se nyní ve Správci úloh i na liště všude korektně hlásí jako „LocAsync Studio“ namísto obecného označení Electron.",
+        "[NEW] Terminologický slovník 2.0: Přidán 'Click-to-Insert' – kliknutím na podtržený termín v originálu se jeho schválený překlad okamžitě vloží do textary.",
+        "[NEW] Správa slovníku: Přidána editace pojmů (ikona tužky) pro snadné opravy a hromadný import slovníku z CSV souborů.",
+        "[SYS] Vylepšený Regex pro slovník: Detekce pojmů nyní respektuje hranice slov (celé výrazy), což eliminuje chybné zvýrazňování uvnitř jiných slov.",
+        "[NEW] Ochrana formátovacích značek (Tag Protection): Editor nyní automaticky hlídá přítomnost značek jako <cf> či <lf> a varuje překladatele, pokud v překladu chybí.",
+        "[NEW] Historie úprav u řádku: Po najetí na ikonu stavu překladu se zobrazí tooltip s informací, kdo a kdy naposledy řádek upravil.",
+        "[NEW] Multiselect akce: Přidány checkboxy pro hromadný výběr řádků – nyní lze jedním kliknutím spustit AI překlad nebo schválení pouze pro vybrané segmenty.",
+        "[UX] Filtr 'Moje práce': Přidán nový filtr v editoru pro okamžité zobrazení pouze těch překladů, které vytvořil nebo upravil přihlášený uživatel."
+      ]
+    },
     {
       "version": "1.1.9",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
