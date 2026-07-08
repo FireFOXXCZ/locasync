@@ -1,14 +1,27 @@
 {
-  "version": "2.0.3",
+  "version": "2.0.4",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.0.3/locasync-2.0.3.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.0.4/locasync-2.0.4.zip",
   "changelog": [
-    "[NEW] Přidávání nových textů přímo v Živém Editoru: Nové tlačítko v horní liště otevře modal pro ruční přidání jednoho řádku (klíč, originál, volitelně i překlad) nebo hromadné vložení/import z CSV. Duplicitní klíče se automaticky přeskočí, u lokálních souborů se řádky zapíší při dalším uložení, u cloudových projektů okamžitě do databáze.",
-    "[NEW] Synchronizace zdrojových textů: Nové tlačítko umožňuje nahrát aktualizovaný zdrojový CSV a porovnat ho s aktuální tabulkou podle klíče. Nové klíče se automaticky přidají, u existujících klíčů se změněným anglickým originálem se text aktualizuje a schválené překlady se vrátí ke kontrole.",
-    "[UX] Vizuální označení nových a změněných řádků: Nově přidané řádky získávají zelený štítek 'Nový řádek', řádky se změněným originálem žlutý štítek 'Originál změněn' s náhledem původního znění po najetí myší.",
-    "[SYS] Optimalizace a čištění kódu: Opravena varování linteru (ESLint) a optimalizovány React hooky (vyčištěné pole závislostí u useCallback) pro snížení zbytečného re-renderování a lepší správu paměti."
+    "[NEW] Rozdělení synchronizace zdrojů na dvě samostatné akce: Tlačítko pro aktualizaci dat nyní otevře výběrový modal s volbou 'Aktualizovat zdrojový text' nebo 'Smazat klíče'. Aktualizace porovná nahraný CSV podle klíče a upraví nebo přidá jen odpovídající řádky — klíče, které v souboru chybí, se nadále nijak nedotknou a zůstávají beze změny.",
+    "[NEW] Samostatné mazání podle klíčů: Nová akce 'Smazat klíče' pracuje s vlastním CSV obsahujícím sloupec 'key' a smaže výhradně klíče, které jsou v souboru výslovně uvedené. Žádné jiné řádky se touto akcí už nikdy nezmění ani neodstraní.",
+    "[FIX] Oprava chybného mazání při aktualizaci zdrojů: Odstraněno starší chování, kdy nahrání aktualizačního CSV bez všech klíčů omylem označilo chybějící (ale stále platné) klíče ke smazání. Aktualizace a mazání jsou nyní zcela nezávislé operace.",
+    "[UX] Přepracovaný náhledový modal: Karty se statistikami i popisky sekcí se nyní přizpůsobují zvolenému režimu (aktualizace vs. mazání), takže je na první pohled jasné, co se přesně zapíše — barevně odlišené i v potvrzovacím tlačítku.",
+    "[FIX] Doplnění chybějících povinných sloupců při zápisu do cloudu: Opraveny opakované chyby 'null value violates not-null constraint' při hromadné aktualizaci zdrojů v cloudových projektech (chyběly hodnoty pro project_id, row_index a loc_key).",
+    "[SYS] Přesnější diagnostika chyb: Chybové hlášky ze serverové databáze se nyní zobrazují s konkrétním důvodem selhání místo obecného oznámení, což usnadňuje řešení problémů se zápisem dat."
   ],
   "history": [
+    {
+      "version": "2.0.3",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.0.3/locasync-2.0.3.zip",
+      "changelog": [
+        "[NEW] Přidávání nových textů přímo v Živém Editoru: Nové tlačítko v horní liště otevře modal pro ruční přidání jednoho řádku (klíč, originál, volitelně i překlad) nebo hromadné vložení/import z CSV. Duplicitní klíče se automaticky přeskočí, u lokálních souborů se řádky zapíší při dalším uložení, u cloudových projektů okamžitě do databáze.",
+        "[NEW] Synchronizace zdrojových textů: Nové tlačítko umožňuje nahrát aktualizovaný zdrojový CSV a porovnat ho s aktuální tabulkou podle klíče. Nové klíče se automaticky přidají, u existujících klíčů se změněným anglickým originálem se text aktualizuje a schválené překlady se vrátí ke kontrole.",
+        "[UX] Vizuální označení nových a změněných řádků: Nově přidané řádky získávají zelený štítek 'Nový řádek', řádky se změněným originálem žlutý štítek 'Originál změněn' s náhledem původního znění po najetí myší.",
+        "[SYS] Optimalizace a čištění kódu: Opravena varování linteru (ESLint) a optimalizovány React hooky (vyčištěné pole závislostí u useCallback) pro snížení zbytečného re-renderování a lepší správu paměti."
+      ]
+    },
     {
       "version": "2.0.2",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
