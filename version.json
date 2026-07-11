@@ -1,13 +1,23 @@
 {
-  "version": "2.1.2",
+  "version": "2.1.3",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.2/locasync-2.1.2.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.3/locasync-2.1.3.zip",
   "changelog": [
-    "[FIX] Oprava registrace nových účtů – databázová funkce pro vytváření profilu se odkazovala na neexistující sloupec, což způsobovalo chybu 'Database error saving new user' a znemožňovalo dokončit žádost o registraci.",
-    "[FIX] Administrátoři s rolí 'Administrátor' se po přihlášení nesprávně dostávali do stavu 'Žádný aktivní tým' a v Systémové správě se jim nezobrazovala možnost přepnout na 'Systémový Globál'. Oprava sjednocuje kontrolu oprávnění s reálně přidělovanou rolí.",
-    "[SYS] Doplněny drobné interní úpravy v logice ověřování oprávnění v sekci Administrace pro vyšší konzistenci mezi globální a týmovou správou."
+    "[FIX] Účty smazané administrátorem jsou nyní automaticky a okamžitě odhlášeny s vysvětlující zprávou na přihlašovací obrazovce, místo aby aplikace zůstala viset v neplatném stavu.",
+    "[UX] Zcela přepracován vzhled okna pro oznámení nové aktualizace – přehlednější zobrazení verze, barevně odlišené položky changelogu a rychlý přístup k historii starších verzí.",
+    "[SYS] Doplněn realtime listener pro okamžitou detekci smazání profilu bez nutnosti čekat na pravidelnou synchronizaci."
   ],
   "history": [
+    {
+      "version": "2.1.2",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.2/locasync-2.1.2.zip",
+      "changelog": [
+        "[FIX] Oprava registrace nových účtů – databázová funkce pro vytváření profilu se odkazovala na neexistující sloupec, což způsobovalo chybu 'Database error saving new user' a znemožňovalo dokončit žádost o registraci.",
+        "[FIX] Administrátoři s rolí 'Administrátor' se po přihlášení nesprávně dostávali do stavu 'Žádný aktivní tým' a v Systémové správě se jim nezobrazovala možnost přepnout na 'Systémový Globál'. Oprava sjednocuje kontrolu oprávnění s reálně přidělovanou rolí.",
+        "[SYS] Doplněny drobné interní úpravy v logice ověřování oprávnění v sekci Administrace pro vyšší konzistenci mezi globální a týmovou správou."
+      ]
+    },
     {
       "version": "2.1.1",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
