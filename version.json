@@ -1,13 +1,23 @@
 {
-  "version": "2.1.1",
+  "version": "2.1.2",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.1/locasync-2.1.1.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.2/locasync-2.1.2.zip",
   "changelog": [
-    "[FIX] Oprava nesprávného výpočtu 'Aktivních dnů' (pracovního streaku) v Osobním profilu. Dotaz do databáze omylem vyžadoval neexistující sloupec, kvůli čemuž se streak vždy zobrazoval jako 0 bez ohledu na skutečnou aktivitu uživatele.",
-    "[SYS] Zjednodušen a zpřesněn výpočetní algoritmus streaku – nyní pracuje výhradně s časem poslední úpravy (updated_at) každého překladu, což zvyšuje spolehlivost výsledku.",
-    "[SYS] Doplněno lepší logování chyb při načítání statistik profilu pro rychlejší budoucí diagnostiku."
+    "[FIX] Oprava registrace nových účtů – databázová funkce pro vytváření profilu se odkazovala na neexistující sloupec, což způsobovalo chybu 'Database error saving new user' a znemožňovalo dokončit žádost o registraci.",
+    "[FIX] Administrátoři s rolí 'Administrátor' se po přihlášení nesprávně dostávali do stavu 'Žádný aktivní tým' a v Systémové správě se jim nezobrazovala možnost přepnout na 'Systémový Globál'. Oprava sjednocuje kontrolu oprávnění s reálně přidělovanou rolí.",
+    "[SYS] Doplněny drobné interní úpravy v logice ověřování oprávnění v sekci Administrace pro vyšší konzistenci mezi globální a týmovou správou."
   ],
   "history": [
+    {
+      "version": "2.1.1",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.1/locasync-2.1.1.zip",
+      "changelog": [
+        "[FIX] Oprava nesprávného výpočtu 'Aktivních dnů' (pracovního streaku) v Osobním profilu. Dotaz do databáze omylem vyžadoval neexistující sloupec, kvůli čemuž se streak vždy zobrazoval jako 0 bez ohledu na skutečnou aktivitu uživatele.",
+        "[SYS] Zjednodušen a zpřesněn výpočetní algoritmus streaku – nyní pracuje výhradně s časem poslední úpravy (updated_at) každého překladu, což zvyšuje spolehlivost výsledku.",
+        "[SYS] Doplněno lepší logování chyb při načítání statistik profilu pro rychlejší budoucí diagnostiku."
+      ]
+    },
     {
       "version": "2.1.0",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
