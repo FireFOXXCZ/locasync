@@ -1,19 +1,29 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
-  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.0/locasync-2.1.0.zip",
+  "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.1/locasync-2.1.1.zip",
   "changelog": [
-    "[NEW] Pak Explorer: Zcela nový nástroj pro procházení herních .pak archivů přímo z aplikace. Po výběru herní složky (nebo uloženého profilu) se archivy načtou do přehledného seznamu a jejich obsah se zobrazí jako klasický souborový strom se zachováním originální adresářové struktury.",
-    "[NEW] Otevření .locres přímo v Živém Editoru: Vybraný .locres soubor lze jedním kliknutím vytáhnout přímo z archivu a otevřít v Živém Editoru bez nutnosti ručně hledat, rozbalovat a exportovat archiv externími nástroji.",
-    "[NEW] Univerzální export libovolného souboru z archivu: Kromě .locres jde stejným způsobem exportovat i libovolný jiný soubor z paku (fonty, textury, konfigurace…) a jeho původní cesta v archivu (např. Content/Localization/Game/en/) se vždy zachová i v cílové složce.",
-    "[NEW] Výchozí exportní složka (Output folder): V nastavení Pak Exploreru lze nastavit trvalou cílovou složku pro export, obdoba 'Output folder' z FModelu. Export pak proběhne okamžitě bez opětovného vybírání cíle při každém kliknutí.",
-    "[NEW] Herní profily: Cesty ke složkám s .pak archivy lze uložit jako pojmenované profily pro rychlé přepínání mezi hrami/instalacemi bez opakovaného procházení souborového systému.",
-    "[NEW] Detail archivu a náhled souboru: Postranní panel zobrazuje informace o vybraném archivu (zabezpečení, komprese, počet položek) i o aktuálně vybraném souboru, včetně jeho plné cesty uvnitř archivu.",
-    "[FIX] Export nyní skutečně respektuje uloženou výchozí exportní složku a už se neptá na cíl při každém exportu, pokud je nastavená.",
-    "[UX] Zkrácena a zpřehledněna notifikace po úspěšném exportu – místo celé (často velmi dlouhé) cesty se nyní zobrazuje jen název exportovaného souboru.",
-    "[SYS] Opravena komunikace mezi preload skriptem a hlavním procesem, díky které se parametr výchozí exportní složky spolehlivě předává až do exportní logiky."
+    "[FIX] Oprava nesprávného výpočtu 'Aktivních dnů' (pracovního streaku) v Osobním profilu. Dotaz do databáze omylem vyžadoval neexistující sloupec, kvůli čemuž se streak vždy zobrazoval jako 0 bez ohledu na skutečnou aktivitu uživatele.",
+    "[SYS] Zjednodušen a zpřesněn výpočetní algoritmus streaku – nyní pracuje výhradně s časem poslední úpravy (updated_at) každého překladu, což zvyšuje spolehlivost výsledku.",
+    "[SYS] Doplněno lepší logování chyb při načítání statistik profilu pro rychlejší budoucí diagnostiku."
   ],
   "history": [
+    {
+      "version": "2.1.0",
+      "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
+      "app_zip_url": "https://github.com/FireFOXXCZ/locasync/releases/download/2.1.0/locasync-2.1.0.zip",
+      "changelog": [
+        "[NEW] Pak Explorer: Zcela nový nástroj pro procházení herních .pak archivů přímo z aplikace. Po výběru herní složky (nebo uloženého profilu) se archivy načtou do přehledného seznamu a jejich obsah se zobrazí jako klasický souborový strom se zachováním originální adresářové struktury.",
+        "[NEW] Otevření .locres přímo v Živém Editoru: Vybraný .locres soubor lze jedním kliknutím vytáhnout přímo z archivu a otevřít v Živém Editoru bez nutnosti ručně hledat, rozbalovat a exportovat archiv externími nástroji.",
+        "[NEW] Univerzální export libovolného souboru z archivu: Kromě .locres jde stejným způsobem exportovat i libovolný jiný soubor z paku (fonty, textury, konfigurace…) a jeho původní cesta v archivu (např. Content/Localization/Game/en/) se vždy zachová i v cílové složce.",
+        "[NEW] Výchozí exportní složka (Output folder): V nastavení Pak Exploreru lze nastavit trvalou cílovou složku pro export, obdoba 'Output folder' z FModelu. Export pak proběhne okamžitě bez opětovného vybírání cíle při každém kliknutí.",
+        "[NEW] Herní profily: Cesty ke složkám s .pak archivy lze uložit jako pojmenované profily pro rychlé přepínání mezi hrami/instalacemi bez opakovaného procházení souborového systému.",
+        "[NEW] Detail archivu a náhled souboru: Postranní panel zobrazuje informace o vybraném archivu (zabezpečení, komprese, počet položek) i o aktuálně vybraném souboru, včetně jeho plné cesty uvnitř archivu.",
+        "[FIX] Export nyní skutečně respektuje uloženou výchozí exportní složku a už se neptá na cíl při každém exportu, pokud je nastavená.",
+        "[UX] Zkrácena a zpřehledněna notifikace po úspěšném exportu – místo celé (často velmi dlouhé) cesty se nyní zobrazuje jen název exportovaného souboru.",
+        "[SYS] Opravena komunikace mezi preload skriptem a hlavním procesem, díky které se parametr výchozí exportní složky spolehlivě předává až do exportní logiky."
+      ]
+    },
     {
       "version": "2.0.5",
       "installer_url": "https://github.com/FireFOXXCZ/locasync/releases/download/installer/Locasync-Installer.exe",
